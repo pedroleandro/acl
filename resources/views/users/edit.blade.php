@@ -26,23 +26,23 @@
 
                             <div class="form-group">
                                 <label for="name">Nome do usuário</label>
-                                <input type="text" class="form-control" id="name" placeholder="Insira o nome do usuário"
+                                <input type="text" class="form-control" id="name" placeholder="Atualize o nome do usuário"
                                        name="name" value="{{ old('name') ?? $user->name }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Insira o email"
+                                <input type="email" class="form-control" id="email" placeholder="Atualize o email"
                                        name="email" value="{{ old('email') ?? $user->email }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="password">Senha</label>
-                                <input type="password" class="form-control" id="password" placeholder="Insira a senha"
+                                <input type="password" class="form-control" id="password" placeholder="Atualize a senha"
                                        name="password" value="">
                             </div>
 
-                            <button type="submit" class="btn btn-block btn-success">Editar Usuário</button>
+                            <button type="submit" class="btn btn-block btn-success">Atualizar Usuário</button>
                         </form>
                     </div>
 
