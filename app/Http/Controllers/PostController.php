@@ -30,6 +30,10 @@ class PostController extends Controller
      */
     public function create()
     {
+        if (!Auth::user()->hasPermissionTo('Cadastrar artigo')) {
+            throw new UnauthorizedException(403, 'Você não possui acesso para cadastrar artigo.');
+        }
+
         return view('posts.create');
     }
 
@@ -103,6 +107,10 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if (!Auth::user()->hasRole('Administrador')) {
+            throw new UnauthorizedException(403, 'Você não é administrador');
+        }
+
         $post->delete();
         return redirect()->route('post.index');
     }
