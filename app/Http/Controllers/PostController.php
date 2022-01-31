@@ -75,6 +75,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        if (!Auth::user()->hasPermissionTo('Editar artigo')) {
+            throw new UnauthorizedException(403, 'Você não possui acesso para editar artigo.');
+        }
+
         return view('posts.edit', [
             'post' => $post
         ]);
@@ -89,6 +93,10 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        if (!Auth::user()->hasPermissionTo('Editar artigo')) {
+            throw new UnauthorizedException(403, 'Você não possui acesso para editar artigo.');
+        }
+
         $post->title = $request->title;
         $post->description = $request->description;
         $post->published = $request->published;
