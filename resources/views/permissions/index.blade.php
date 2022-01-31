@@ -14,7 +14,8 @@
                             </div>
                         @endif
 
-                        <a class="text-success" href="{{ route('permission.create') }}">&plus; Cadastrar Nova Permissão</a>
+                        <a class="text-success" href="{{ route('permission.create') }}">&plus; Cadastrar Nova
+                            Permissão</a>
 
                         @if($errors)
                             @foreach($errors->all() as $error)
@@ -41,8 +42,9 @@
                                     <td class="d-flex">
                                         <a class="mr-3 btn btn-sm btn-outline-success"
                                            href="{{ route('permission.edit', ['permission' => $permission->id]) }}">Editar</a>
-                                        <a class="mr-3 btn btn-sm btn-outline-info" href="">Perfis</a>
-                                        <form action="{{ route('permission.destroy', ['permission' => $permission->id]) }}" method="post">
+                                        <form
+                                            action="{{ route('permission.destroy', ['permission' => $permission->id]) }}"
+                                            method="post">
                                             @csrf
                                             @method('delete')
                                             <input class="btn btn-sm btn-outline-danger" type="submit" value="Remover">
