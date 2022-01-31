@@ -32,13 +32,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="content">Conteúdo</label>
-                                <textarea class="form-control" id="content" rows="3" name="content"
-                                          placeholder="Insira o conteúdo...">{{ old('content') ?? $post->content }}</textarea>
+                                <label for="description">Conteúdo</label>
+                                <textarea class="form-control" id="description" rows="3" name="description"
+                                          placeholder="Insira o conteúdo...">{{ old('description') ?? $post->description }}</textarea>
                             </div>
 
                             <div class="form-group">
-                                <label for="content">Publicado</label>
+                                <label for="published">Publicado</label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="published" id="publishedtrue"
                                            value="1" {{ $post->published == true ? 'checked' : '' }}>
